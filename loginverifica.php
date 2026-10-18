@@ -20,7 +20,7 @@
 
         header("Location: menu.html");
         exit();
-    } else {    
+    } else {
         header("Location: login.html");
         exit();
     }
