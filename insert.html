@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Registrazione Utente</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Registrazione Utente</h1>
+
+    <form id="modulo" action="inserisciutente.php" method="post">
+      <fieldset class="glass-card">
+        
+        <div class="campo">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" class="input" required>
+        </div>
+
+        <div class="campo">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="input" required>
+        </div>
+
+        <div class="campo">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" class="input" required>
+        </div>
+
+        <div class="campo">
+          <label for="cognome">Cognome</label>
+          <input type="text" id="cognome" name="cognome" class="input" required>
+        </div>
+
+        <div class="campo">
+          <label for="cf">Codice Fiscale</label>
+          <input type="text" id="cf" name="cf" class="input" maxlength="16" required>
+        </div>
+
+        <button type="submit" name="invio" class="invia">Invia</button>
+
+      </fieldset>
+    </form>
+
+</body>
+</html>
