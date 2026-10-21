@@ -1,9 +1,21 @@
+<?php
+	session_start();
+
+	//reinderizzamento a login se non sono loggato
+	if (!isset($_SESSION['nome'])) {
+		header("Location: login.html");
+		exit();
+	}
+?>
+
 <html>
 	<head>
 		<title>Menu Clienti</title>
 	</head>
 
 	<body>
+		<h1>Benvenuto/a <?php echo $_SESSION['nome']; ?></h1>
+
 		<button><a href="inserimento.php"></a>Inserimento Clienti</button> <br> <br>
 		<button><a href="modifica.php"></a>Modifica Clienti</button> <br> <br>
 		<button><a href="elimina.php"></a>Elimina Clienti</button> <br> <br>
