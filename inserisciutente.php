@@ -17,11 +17,13 @@
         $conn->query($query);
         
         header('Location: login.html');
+        exit();
     } else {
         echo "<script>
                 alert('Utente già registrato con questo codice fiscale.');
                 window.location.href = 'insert.html';
               </script>";
+        exit();
     }
     
     $conn->close();
