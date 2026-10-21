@@ -170,6 +170,52 @@ textarea::placeholder {
   box-shadow: none;
 }
 
+
+.link {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.link a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.link a:hover {
+  opacity: 1;
+  color: #f700ff; /* Richiama il colore dei tuoi input */
+  text-shadow: 0 0 8px rgba(247, 0, 255, 0.6);
+}
+
+/* Rimuove la sottolineatura dai link che usano la classe .invia */
+a.invia {
+  text-decoration: none;
+}
+
+
+
+/* ---------- Stili per menu.php ---------- */
+
+legend.menu-legend {
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+
+
+
 /* ---------- Responsive ---------- */
 
 /* Tablet: la card occupa le colonne 2-7 su 8 */

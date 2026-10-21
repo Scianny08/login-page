@@ -18,7 +18,7 @@
         $nome = $row["nome"];
         $_SESSION['nome'] = $nome;
 
-        header("Location: menu.html");
+        header("Location: menu.php");
         exit();
     } else {    
         header("Location: login.html");
