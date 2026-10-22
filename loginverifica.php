@@ -20,8 +20,11 @@
 
         header("Location: menu.php");
         exit();
-    } else {    
-        header("Location: login.html");
+    } else {
+        echo "<script>
+                alert('Dati d\'accesso errati.');
+                window.location.href = 'login.html';
+              </script>";
         exit();
     }
 
