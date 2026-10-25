@@ -7,7 +7,7 @@
     $cognome = $_POST["cognome"];
     $cf = $_POST["cf"];
     
-
+    
     $sql = "SELECT * FROM utenti WHERE cf='$cf'";
     $result = $conn->query($sql);
 
