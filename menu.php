@@ -1,11 +1,5 @@
 <?php
 	session_start();
-
-	//reinderizzamento a login se non sono loggato
-	if (!isset($_SESSION['nome'])) {
-		header("Location: login.html");
-		exit();
-	}
 ?>
 
 <html>
