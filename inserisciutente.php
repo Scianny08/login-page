@@ -7,11 +7,13 @@
     $cognome = $_POST["cognome"];
     $cf = $_POST["cf"];
     
-
     $sql = "SELECT * FROM utenti WHERE cf='$cf'";
-    $result = $conn->query($sql);
+    $resultCf = $conn->query($sql);
 
-    if ($result->num_rows == 0) {
+    $sql = "SELECT * FROM utenti WHERE username='$user'";
+    $resultUser = $conn->query($sql);
+
+    if ($resultCf->num_rows == 0 && $resultUser->num_rows == 0) {
         $query = "INSERT INTO utenti(username, password, nome, cognome, cf) 
                 VALUES ('$user', '$pw', '$nome', '$cognome', '$cf')";
         $conn->query($query);
@@ -20,7 +22,7 @@
         exit();
     } else {
         echo "<script>
-                alert('Utente già registrato con questo codice fiscale.');
+                alert('Utente già registrato.');
                 window.location.href = 'insert.html';
               </script>";
         exit();
