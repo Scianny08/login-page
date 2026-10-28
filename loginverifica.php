@@ -22,7 +22,7 @@
         exit();
     } else {
         echo "<script>
-                alert('Dati d\'accesso errati.');
+                alert('Dati d\'accesso errati o account non trovato.');
                 window.location.href = 'login.html';
               </script>";
         exit();
