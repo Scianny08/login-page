@@ -10,17 +10,27 @@
     $usnm = $_POST['username'];
     $pswd = $_POST['password'];
 
-    $sql = "SELECT * FROM utenti WHERE username='$usnm' and password='$pswd'";
-    $result = $conn->query($sql);
+    $sql = "SELECT * FROM utenti WHERE username='$usnm'";
+    $resultUsername = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        $row = mysqli_fetch_array($result);
-        $nome = $row["nome"];
-        $_SESSION['nome'] = $nome;
+    if ($resultUsername->num_rows > 0) {
+        $sql = "SELECT * FROM utenti WHERE username='$usnm' AND password='$pswd'";
+        $result = $conn->query($sql);
 
-        header("Location: menu.php");
-        exit();
-    } else {
+        if ($result->num_rows > 0) {
+            $row = mysqli_fetch_array($result);
+            $nome = $row["nome"];
+            $_SESSION['nome'] = $nome;
+
+            header("Location: menu.php");
+            exit();
+        } else {
+            //password errata
+            header("Location: login.html");
+            exit();
+        }
+    } else { 
+        //utente non trovato
         header("Location: login.html");
         exit();
     }
