@@ -15,8 +15,12 @@
 
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_array($result);
+
         $nome = $row["nome"];
         $_SESSION['nome'] = $nome;
+        
+        $cf = $row["cf"];
+        $_SESSION['cf'] = $cf;
 
         header("Location: menu.php");
         exit();

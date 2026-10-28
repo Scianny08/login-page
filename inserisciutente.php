@@ -21,7 +21,7 @@
         header('Location: login.html');
         exit();
     } else {
-        header('Location: insert.html');
+        header('Location: signup.html');
         exit();
     }
     
