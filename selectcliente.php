@@ -29,10 +29,10 @@
             if ($risultato->num_rows > 0) {
                 while ($riga = $risultato->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td>" . $riga['iva'] . "</td>";
-                    echo "<td>" . $riga['denominazione'] . "</td>";
-                    echo "<td>" . $riga['via'] . "</td>";
-                    echo "<td>" . $riga['citta'] . "</td>";
+                    echo "<td>". $riga['iva'] ."</td>";
+                    echo "<td>". $riga['denominazione'] ."</td>";
+                    echo "<td>". $riga['via'] ."</td>";
+                    echo "<td>". $riga['citta'] ."</td>";
                     echo "</tr>";
                 }
             } else {
