@@ -4,9 +4,9 @@
 
     if (isset($_POST['invio'])) {
         $cf = $_SESSION['cf'];
-        $totale = count($_POST['iva']);
+        $num_record = count($_POST['iva']);
 
-        for ($i = 0; $i < $totale; $i++) {
+        for ($i = 0; $i < $num_record; $i++) {
             
             // Dati nuovi inseriti dall'utente
             $iva_nuova = $conn->real_escape_string($_POST['iva'][$i]);
