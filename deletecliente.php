@@ -1,9 +1,16 @@
 <?php
     session_start();
+
+    // Se la sessione del codice fiscale non è impostata, l'utente non è loggato
+    if (!isset($_SESSION['cf'])) {
+        header("Location: login.html");
+        exit();
+    }
 ?>
 
 <html>
 	<head>
+        <meta charset="UTF-8">
 		<title>Eliminazione Cliente</title>
 	</head>
 
@@ -28,7 +35,7 @@
                     }
                     echo "</select>";
                 } else {
-                    echo "<p>Nessun cliente trovato.</p>";
+                    echo "<br> Nessun cliente trovato.";
                 }
 
                 $conn->close();
@@ -38,5 +45,6 @@
             <input type="submit" name="invio" value="Invia"/>
         </form>
         
+        <a href="menu.php">Torna al menu</a>
     </body>
 </html>
