@@ -22,6 +22,7 @@ body {
 /* i campi di form ereditano il font del body */
 input,
 textarea,
+select,
 button {
   font-family: inherit;
 }
@@ -106,8 +107,12 @@ fieldset {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4rem;          /* spazio tra label e input */
+  gap: 0.4rem;            /* spazio tra label e input */
   margin-bottom: 1.25rem; /* spazio tra un campo e l'altro */
+}
+
+.campo label {
+  font-size: 1.2rem;
 }
 
 .input {
@@ -170,7 +175,6 @@ textarea::placeholder {
   box-shadow: none;
 }
 
-
 .link {
   margin-top: 1.5rem;
   font-size: 1.1rem;
@@ -196,7 +200,55 @@ a.invia {
   text-decoration: none;
 }
 
+/* ---------- Tabelle ---------- */
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+  background-color: rgba(247, 0, 255, 0.2);
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: normal;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+/* variante più compatta: unica differenza rispetto a table */
+table.data-table th,
+table.data-table td {
+  padding: 10px;
+}
+
+table.data-table td.empty-row {
+  padding: 20px;
+}
+
+/* input all'interno delle tabelle (es. updatecliente.php) */
+td input.input {
+  width: 100%;
+  max-width: 100%;
+  height: 38px;
+  font-size: 1rem;
+  padding: 6px 10px;
+  margin: 0;
+}
 
 /* ---------- Stili per menu.php ---------- */
 
@@ -213,8 +265,35 @@ legend.menu-legend {
   margin-bottom: 1rem;
 }
 
+select.input,
+select {
+  font-size: 1.1rem;
+  background-color: #f700ff20;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 8px 12px;
+  width: 100%;
+  max-width: 100%;
+  height: 44px;
+}
 
+select option {
+  font-family: inherit;
+  background-color: #500065;
+  color: white;
+  font-size: 1rem;
+  padding: 10px;
+}
 
+/* ---------- Contenitori larghi ---------- */
+.glass-card-wide {
+  min-width: 80% !important;
+}
+
+.glass-card-medium {
+  min-width: 70% !important;
+}
 
 /* ---------- Responsive ---------- */
 

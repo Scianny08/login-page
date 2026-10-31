@@ -3,28 +3,26 @@
     
     include("connessione.inc");
 
-    //$usnm = mysqli_real_escape_string($conn, $_POST['username']);
-    //$pswd = mysqli_real_escape_string($conn, $_POST['password']);
+    $usnm = mysqli_real_escape_string($conn, $_POST['username']);
+    $pswd = mysqli_real_escape_string($conn, $_POST['password']);
     //$pswd = md5($pswd);
-
-    $usnm = $_POST['username'];
-    $pswd = $_POST['password'];
 
     $sql = "SELECT * FROM utenti WHERE username='$usnm' and password='$pswd'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_array($result);
+
         $nome = $row["nome"];
         $_SESSION['nome'] = $nome;
+        
+        $cf = $row["cf"];
+        $_SESSION['cf'] = $cf;
 
         header("Location: menu.php");
         exit();
     } else {
-        echo "<script>
-                alert('Dati d\'accesso errati o account non trovato.');
-                window.location.href = 'login.html';
-              </script>";
+        header("Location: login.html");
         exit();
     }
 

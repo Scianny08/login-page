@@ -1,11 +1,11 @@
 <?php
-	session_start();
+    session_start();
 
-	// Reindirizzamento a login se non sono loggato
-	if (!isset($_SESSION['nome'])) {
-		header("Location: login.html");
-		exit();
-	}
+    // Se la sessione del codice fiscale non è impostata, l'utente non è loggato
+    if (!isset($_SESSION['cf'])) {
+        header("Location: login.html");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -28,10 +28,12 @@
             <legend class="menu-legend">Benvenuto/a <?php echo $_SESSION['nome']; ?></legend>
 
             <div class="menu-container">
-                <a href="inserimento.php" class="invia">Inserimento</a>
-                <a href="modifica.php" class="invia">Modifica</a>
-                <a href="elimina.php" class="invia">Elimina</a>
-                <a href="visualizza.php" class="invia">Visualizza</a>
+                <a href="insertcliente.php" class="invia">Inserimento</a>
+                <a href="updatecliente.php" class="invia">Modifica</a>
+                <a href="deletecliente.php" class="invia">Elimina</a>
+                <a href="selectcliente.php" class="invia">Visualizza</a>
+                
+                <div class="link"><a href="logout.php">Log out</a></div>
             </div>
         </fieldset>
     </div>
