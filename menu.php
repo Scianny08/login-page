@@ -18,9 +18,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <script src="components.js" defer></script>
 </head>
 
 <body>
+
     <h1>Menu Clienti</h1>
 
     <div class="glass-card">
@@ -32,10 +34,9 @@
                 <a href="updatecliente.php" class="invia">Modifica</a>
                 <a href="deletecliente.php" class="invia">Elimina</a>
                 <a href="selectcliente.php" class="invia">Visualizza</a>
-                
-                <div class="link"><a href="logout.php">Log out</a></div>
             </div>
         </fieldset>
     </div>
+
 </body>
 </html>

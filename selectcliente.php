@@ -18,52 +18,48 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+        <script src="components.js" defer></script>
     </head>
+
 <body>
-
     <h1>Visualizza Clienti</h1>
-    
-    <div class="glass-card" style="width: fit-content; min-width: 70%;">
-      <fieldset>
-        <table>
-            <tr>
-                <th">IVA</th>
-                <th">Denominazione</th>
-                <th">Città</th>
-                <th">Via</th>
-            </tr>
 
-            <?php
-                include("connessione.inc");
-                $cf = $_SESSION['cf'];
+    <div class="glass-card glass-card-medium">
+        <fieldset>
+            <table class="data-table">
+                <tr>
+                    <th>IVA</th>
+                    <th>Denominazione</th>
+                    <th>Città</th>
+                    <th>Via</th>
+                </tr>
 
-                $sql = "SELECT * FROM clienti WHERE cf = '$cf' order by denominazione";
-                $risultato = $conn->query($sql);
+                <?php
+                    include("connessione.inc");
+                    $cf = $_SESSION['cf'];
 
-                // Controlla se la query ha restituito risultati
-                if ($risultato->num_rows > 0) {
-                    while ($riga = $risultato->fetch_assoc()) {
-                        echo "<tr>";
+                    $sql = "SELECT * FROM clienti WHERE cf = '$cf' order by denominazione";
+                    $risultato = $conn->query($sql);
 
-                        echo "<td>". htmlspecialchars($riga['iva']) ."</td>";
-                        echo "<td>". htmlspecialchars($riga['denominazione']) ."</td>";
-                        echo "<td>". htmlspecialchars($riga['citta']) ."</td>";
-                        echo "<td>". htmlspecialchars($riga['via']) ."</td>";
-                        
-                        echo "</tr>";
+                    if ($risultato->num_rows > 0) {
+                        while ($riga = $risultato->fetch_assoc()) {
+                            echo "<tr>";
+
+                            echo "<td>" . htmlspecialchars($riga['iva']) . "</td>";
+                            echo "<td>" . htmlspecialchars($riga['denominazione']) . "</td>";
+                            echo "<td>" . htmlspecialchars($riga['citta']) . "</td>";
+                            echo "<td>" . htmlspecialchars($riga['via']) . "</td>";
+
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='4' class='empty-row'>Nessun cliente trovato.</td></tr>";
                     }
-                } else {
-                    echo "<tr><td colspan='4'>Nessun cliente trovato.</td></tr>";
-                }
 
-                $conn->close();
-            ?>
-        </table>
-      </fieldset>
-    </div>
-    
-    <div class="link">
-      <a href="menu.php">Torna al menu</a>
+                    $conn->close();
+                ?>
+            </table>
+        </fieldset>
     </div>
 
 </body>

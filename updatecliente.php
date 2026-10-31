@@ -18,9 +18,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <script src="components.js" defer></script>
 </head>
-<body>
 
+<body>
     <h1>Modifica Clienti</h1>
     
     <form action="update.php" method="post">
@@ -71,9 +72,5 @@
       </div>
     </form>
 
-    <div class="link">
-      <a href="menu.php">Torna al menu</a>
-    </div>
-    
 </body>
 </html>
