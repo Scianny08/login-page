@@ -1,6 +1,4 @@
 <?php
-    session_start();
-    
     include("connessione.inc");
 
     $usnm = mysqli_real_escape_string($conn, $_POST['username']);
@@ -11,6 +9,8 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
+        session_start();
+        
         $row = mysqli_fetch_array($result);
 
         $nome = $row["nome"];
