@@ -27,7 +27,7 @@
             </tr>
 
             <?php
-                include("connessione.inc");
+                require_once __DIR__ . '/connessione.inc';
                 $cf = $_SESSION['cf'];
 
                 $sql = "SELECT * FROM clienti WHERE cf = '$cf' order by denominazione";

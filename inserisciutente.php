@@ -1,5 +1,5 @@
 <?php
-    include("connessione.inc");
+    require_once __DIR__ . '/connessione.inc';
 
     $user = $_POST["username"];
     $pw = $_POST["password"];

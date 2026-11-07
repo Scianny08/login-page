@@ -21,7 +21,7 @@
             <label for="pIva">Seleziona il cliente da eliminare</label>
             
             <?php
-                include("connessione.inc");
+                require_once __DIR__ . '/connessione.inc';
                 $cf = $_SESSION['cf'];
 
                 $sql = "SELECT denominazione, iva FROM clienti WHERE cf = '$cf' order by denominazione";

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("connessione.inc");
+    require_once __DIR__ . '/connessione.inc';
 
     $iva = $conn->real_escape_string($_POST["iva"]);
     $denominazione = $conn->real_escape_string($_POST["denominazione"]);

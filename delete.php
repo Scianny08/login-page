@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("connessione.inc");
+    require_once __DIR__ . '/connessione.inc';
 
     if (isset($_POST['invio']) && isset($_POST['pIva'])) {
         $ivaDaEliminare = $conn->real_escape_string($_POST['pIva']);
