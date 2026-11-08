@@ -11,11 +11,12 @@ create table utenti (
 );
 
 create table clienti (
-    iva char(11) not null primary key,
+    iva char(11) not null,
     denominazione varchar(100) not null,
     via varchar(100) not null,
     citta varchar(50) not null,
     cf char(16) not null,
 
-    FOREIGN KEY (cf) REFERENCES utenti(cf)
+    primary key (iva, cf), 
+    foreign key (cf) references utenti(cf) on update cascade
 );

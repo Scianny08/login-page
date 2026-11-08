@@ -38,11 +38,6 @@
 				</div>
 
 				<div class="campo">
-					<label for="password_attuale">Password attuale</label>
-					<input type="password" id="password_attuale" name="password_attuale" class="input" autocomplete="current-password">
-				</div>
-
-				<div class="campo">
 					<label for="nome">Nome</label>
 					<input type="text" id="nome" name="nome" class="input">
 				</div>
@@ -57,6 +52,11 @@
 					<input type="text" id="cf" name="cf" class="input" maxlength="16">
 				</div>
 
+                <div class="campo">
+					<label for="password_attuale">Password attuale</label>
+					<input type="password" id="password_attuale" name="password_attuale" class="input" autocomplete="current-password">
+				</div>
+                
 				<button type="submit" name="invio" class="invia">Invia</button>
 			</fieldset>
 		</form>
