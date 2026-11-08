@@ -10,41 +10,73 @@
 
 <!DOCTYPE html>
 <html lang="it">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Impostazioni Utente</title>
-		<link rel="stylesheet" href="assets/style.css">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
-		<script src="assets/components.js" defer></script>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Impostazioni Utente</title>
+	<link rel="stylesheet" href="assets/style.css">
+	<script src="assets/components.js" defer></script>
+</head>
 
 <body>
 	<h1>Impostazioni Utente</h1>
 
-    <form action="utente/update.php" method="post">
-        <fieldset class="glass-card">
-            <legend>Modifica dati</legend>
-            Username <br> <input type="text" name="username" size="20"/> <br>
-            Nuova password <br> <input type="password" name="password" size="20"/> <br>
-            Password attuale <br> <input type="password" name="password_attuale" size="20"/> <br>
-            Nome <br> <input type="text" name="nome" size="20"/> <br>
-            Cognome <br> <input type="text" name="cognome" size="20"/> <br>
-            Codice fiscale <br><input type="text" name="cf" size="20"/> <br> <br>
+	<div class="glass-card">
 
-            <input type="submit" name="invio" value="Invia"/>
-        </fieldset>
-	</form>
+		<form id="modulo" action="utente/update.php" method="post" accept-charset="UTF-8">
+			<fieldset>
+				<legend class="menu-legend">Modifica dati</legend>
 
-	<form action="logout.php" method="post">
-		<input type="submit" name="invio" value="Esci"/>
-	</form>
-	
-    <form action="utente/delete.php" method="post">
-		<input type="submit" name="invio" value="Elimina utente"/>
-	</form>
+				<div class="campo">
+					<label for="username">Username</label>
+					<input type="text" id="username" name="username" class="input">
+				</div>
+
+				<div class="campo">
+					<label for="password">Nuova password</label>
+					<input type="password" id="password" name="password" class="input" autocomplete="new-password">
+				</div>
+
+				<div class="campo">
+					<label for="password_attuale">Password attuale</label>
+					<input type="password" id="password_attuale" name="password_attuale" class="input" autocomplete="current-password">
+				</div>
+
+				<div class="campo">
+					<label for="nome">Nome</label>
+					<input type="text" id="nome" name="nome" class="input">
+				</div>
+
+				<div class="campo">
+					<label for="cognome">Cognome</label>
+					<input type="text" id="cognome" name="cognome" class="input">
+				</div>
+
+				<div class="campo">
+					<label for="cf">Codice fiscale</label>
+					<input type="text" id="cf" name="cf" class="input" maxlength="16">
+				</div>
+
+				<button type="submit" name="invio" class="invia">Invia</button>
+			</fieldset>
+		</form>
+
+		<fieldset class="fieldset-account">
+			<legend class="menu-legend">Account</legend>
+
+			<div class="menu-container">
+				<form action="logout.php" method="post">
+					<button type="submit" name="invio" class="invia">Esci</button>
+				</form>
+
+				<form action="utente/delete.php" method="post"
+				      onsubmit="return confirm('Sei sicuro di voler eliminare il tuo utente? L\'operazione non è reversibile.');">
+					<button type="submit" name="invio" class="invia">Elimina utente</button>
+				</form>
+			</div>
+		</fieldset>
+
+	</div>
 
 </body>
 </html>
