@@ -1,5 +1,5 @@
 <?php
-    include("connessione.inc");
+    require_once __DIR__ . "/config/connessione.inc";
 
     $usnm = mysqli_real_escape_string($conn, $_POST['username']);
     $pswd = mysqli_real_escape_string($conn, $_POST['password']);

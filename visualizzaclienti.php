@@ -14,11 +14,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Visualizza Clienti</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="assets/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
-        <script src="components.js" defer></script>
+        <script src="assets/components.js" defer></script>
     </head>
 
 <body>
@@ -35,7 +35,7 @@
                 </tr>
 
                 <?php
-                    include("connessione.inc");
+                    require_once __DIR__ . "/config/connessione.inc";
                     $cf = $_SESSION['cf'];
 
                     $sql = "SELECT * FROM clienti WHERE cf = '$cf' order by denominazione";

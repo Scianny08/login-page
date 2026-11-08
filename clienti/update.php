@@ -1,8 +1,8 @@
 <?php
     session_start();
-    include("connessione.inc");
+    require_once __DIR__ . '/../config/connessione.inc';
 
-    if (isset($_POST['invio'])) {
+    if (isset($_POST['invio']) && isset($_POST['iva'])) {
         $cf = $_SESSION['cf'];
         $num_record = count($_POST['iva']);
 
@@ -23,7 +23,7 @@
             
             $risCheck = $conn->query($sqlCheck);
 
-            // 2. Se il controllo NON trova duplicati (num_rows è 0), allora eseguiamo l'UPDATE
+            // 2. Se il controllo NON trova duplicati (num_rows è 0), allora eseguo l'UPDATE
             if ($risCheck->num_rows == 0) {
                 $sqlUpdate = "UPDATE clienti SET 
                                 iva = '$iva_nuova',
@@ -37,6 +37,6 @@
         }
     }
 
-    header("Location: updatecliente.php");
+    header("Location: ../modificaclienti.php");
     exit();
 ?>

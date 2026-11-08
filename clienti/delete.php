@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("connessione.inc");
+    require_once __DIR__ . '/../config/connessione.inc';
 
     if (isset($_POST['invio']) && isset($_POST['pIva'])) {
         $ivaDaEliminare = $conn->real_escape_string($_POST['pIva']);
@@ -12,6 +12,6 @@
         $conn->close();
     }
 
-    header("Location: deletecliente.php");
+    header("Location: ../eliminacliente.php");
     exit();
 ?>

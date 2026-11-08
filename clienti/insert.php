@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("connessione.inc");
+    require_once __DIR__ . '/../config/connessione.inc';
 
     $iva = $conn->real_escape_string($_POST["iva"]);
     $denominazione = $conn->real_escape_string($_POST["denominazione"]);
@@ -16,10 +16,10 @@
                 VALUES ('$iva', '$denominazione', '$via', '$citta', '$cf')";
         $conn->query($query);
         
-        header('Location: menu.php');
+        header('Location: ../menu.php');
         exit();
     } else {
-        header('Location: insertcliente.html');
+        header('Location: ../inseriscicliente.php');
         exit();
     }
     

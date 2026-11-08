@@ -1,5 +1,5 @@
 // Navbar e footer comuni a tutte le pagine.
-// Uso: <script src="components.js" defer></script> nell'<head> di ogni pagina.
+// Uso: <script src="assets/components.js" defer></script> nell'<head> di ogni pagina.
 
 const NAVBAR_HTML = `
 <nav class="navbar">
@@ -10,7 +10,7 @@ const NAVBAR_HTML = `
     <li><a href="#contatti">Contatti</a></li>
     <li><a href="login.html">Accedi</a></li>
     <li><a href="signup.html">Registrati</a></li>
-    <li><a href="logout.php">Esci</a></li>
+    <li><a href="settings.php">Impostazioni</a></li>
   </ul>
 </nav>`;
 
