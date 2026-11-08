@@ -2,7 +2,7 @@
     session_start();
     require_once __DIR__ . '/../config/connessione.inc';
 
-    if (isset($_POST['invio'])) {
+    if (isset($_POST['invio']) && isset($_POST['iva'])) {
         $cf = $_SESSION['cf'];
         $num_record = count($_POST['iva']);
 

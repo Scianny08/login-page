@@ -18,5 +18,5 @@ create table clienti (
     cf char(16) not null,
 
     primary key (iva, cf), 
-    foreign key (cf) references utenti(cf)
+    foreign key (cf) references utenti(cf) on update cascade
 );

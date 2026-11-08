@@ -21,8 +21,9 @@
 		<a href="modificaclienti.php"><button>Modifica Clienti</button></a> <br> <br>
 		<a href="eliminacliente.php"><button>Elimina Clienti</button></a> <br> <br>
 		<a href="visualizzaclienti.php"><button>Visualizza Clienti</button></a>
+
+		<br> <br>
+		<a href ="settings.php">Impostazioni utente</a>
 	</body>
-	
-	<br> <br> <br>
-	<a href ="settings.php">Impostazioni utente</a>
+
 </html>
