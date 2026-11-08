@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/connessione.inc';
+    require_once __DIR__ . '/../config/connessione.inc';
 
     $user = $_POST["username"];
     $pw = $_POST["password"];
@@ -18,10 +18,10 @@
                 VALUES ('$user', '$pw', '$nome', '$cognome', '$cf')";
         $conn->query($query);
         
-        header('Location: login.html');
+        header('Location: ../login.html');
         exit();
     } else {
-        header('Location: signup.html');
+        header('Location: ../signup.html');
         exit();
     }
     

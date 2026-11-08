@@ -17,7 +17,7 @@
     <body>
         <h2>Inserimento Cliente</h2>
 
-        <form action="insert.php" method="post" accept-charset="UTF-8">
+        <form action="cliente/insert.php" method="post" accept-charset="UTF-8">
             P. IVA <br> <input type="text" name="iva" size="20"/> <br>
             Denominazione <br> <input type="text" name="denominazione" size="20"/> <br>
             Città <br> <input type="text" name="citta" size="20"/> <br>

@@ -17,7 +17,7 @@
 
     <h2>Modifica Clienti</h2>
     
-    <form action="update.php" method="post">
+    <form action="cliente/update.php" method="post">
         <table border="1">
             <tr>
                 <th>IVA</th>
@@ -27,7 +27,7 @@
             </tr>
 
             <?php
-                require_once __DIR__ . '/connessione.inc';
+                require_once __DIR__ . '/config/connessione.inc';
                 $cf = $_SESSION['cf'];
 
                 $sql = "SELECT * FROM clienti WHERE cf = '$cf' order by denominazione";

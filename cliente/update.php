@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once __DIR__ . '/connessione.inc';
+    require_once __DIR__ . '/../config/connessione.inc';
 
     if (isset($_POST['invio'])) {
         $cf = $_SESSION['cf'];
@@ -37,6 +37,6 @@
         }
     }
 
-    header("Location: updatecliente.php");
+    header("Location: ../modificaclienti.php");
     exit();
 ?>

@@ -17,11 +17,11 @@
     <body>
         <h2>Eliminazione Cliente</h2>
 
-        <form action="delete.php" method="post">
+        <form action="cliente/delete.php" method="post">
             <label for="pIva">Seleziona il cliente da eliminare</label>
             
             <?php
-                require_once __DIR__ . '/connessione.inc';
+                require_once __DIR__ . '/config/connessione.inc';
                 $cf = $_SESSION['cf'];
 
                 $sql = "SELECT denominazione, iva FROM clienti WHERE cf = '$cf' order by denominazione";

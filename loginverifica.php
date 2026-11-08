@@ -1,9 +1,9 @@
 <?php
-    require_once __DIR__ . '/connessione.inc';
+    require_once __DIR__ . '/config/connessione.inc';
 
     $usnm = mysqli_real_escape_string($conn, $_POST['username']);
     $pswd = mysqli_real_escape_string($conn, $_POST['password']);
-    $pswd = md5($pswd);
+    //$pswd = md5($pswd);
 
     $sql = "SELECT * FROM utenti WHERE username='$usnm' and password='$pswd'";
     $result = $conn->query($sql);
