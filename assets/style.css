@@ -8,7 +8,7 @@ body {
   background-color: #70008f;
   background-image:
     linear-gradient(0deg, rgba(112, 0, 143, 0.6) 0%, rgba(182, 87, 199, 0.35) 50%, rgba(209, 43, 255, 0.35) 100%),
-    url("purple-peaks.jpg");
+    url("purple-peaks.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
