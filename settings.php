@@ -22,10 +22,10 @@
             <legend>Modifica dati</legend>
             Username <br> <input type="text" name="username" size="20"/> <br>
             Nuova password <br> <input type="password" name="password" size="20"/> <br>
-            Password attuale <br> <input type="password" name="password_attuale" size="20"/> <br>
             Nome <br> <input type="text" name="nome" size="20"/> <br>
             Cognome <br> <input type="text" name="cognome" size="20"/> <br>
             Codice fiscale <br><input type="text" name="cf" size="20"/> <br> <br>
+            Password attuale <br> <input type="password" name="password_attuale" size="20"/> <br> <br>
 
             <input type="submit" name="invio" value="Invia"/>
         </fieldset>

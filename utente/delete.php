@@ -2,7 +2,7 @@
     session_start();
     require_once __DIR__ . '/../config/connessione.inc';
 
-    if (isset($_SESSION['cf']) && isset($_POST['invio'])) {
+    if (isset($_POST['invio'])) {
         $cf = $conn->real_escape_string($_SESSION['cf']);
 
         $sqlDeleteClienti = "DELETE FROM clienti WHERE cf = '$cf'";
