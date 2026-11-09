@@ -70,7 +70,7 @@
 				</form>
 
 				<form action="utente/delete.php" method="post"
-				      onsubmit="return confirm('Sei sicuro di voler eliminare il tuo utente? L\'operazione non è reversibile.');">
+				      onsubmit="return confirm('Sei sicuro di voler eliminare il tuo utente? L\'operazione non è reversibile e tutti i clienti registrati verranno eliminati.');">
 					<button type="submit" name="invio" class="invia">Elimina utente</button>
 				</form>
 			</div>
