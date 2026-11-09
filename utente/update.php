@@ -5,7 +5,7 @@
     if (isset($_POST['invio']) && isset($_POST['password_attuale'])) {
         $cfOriginale = $conn->real_escape_string($_SESSION['cf']);
         $username = $conn->real_escape_string($_POST['username']);
-        $password = $conn->real_escape_string($_POST['password']);
+        $passwordNuova = $conn->real_escape_string($_POST['password']);
         $passwordAttuale = $conn->real_escape_string($_POST['password_attuale']);
         $nome = $conn->real_escape_string($_POST['nome']);
         $cognome = $conn->real_escape_string($_POST['cognome']);
@@ -24,11 +24,21 @@
             if ($risCheck->num_rows == 0) {
                 $sqlUpdate = "UPDATE utenti SET
                                 username = '$username',
-                                password = '$password',
                                 nome = '$nome',
                                 cognome = '$cognome',
                                 cf = '$cfNuovo'
                             WHERE cf = '$cfOriginale'";
+
+                if ($passwordNuova !== '') {
+                    $sqlUpdate = "UPDATE utenti SET
+                                    username = '$username',
+                                    password = '$passwordNuova',
+                                    nome = '$nome',
+                                    cognome = '$cognome',
+                                    cf = '$cfNuovo'
+                                WHERE cf = '$cfOriginale'";
+                }
+
                 $conn->query($sqlUpdate);
 
                 $_SESSION['cf'] = $cfNuovo;
